@@ -1,6 +1,6 @@
 //recupero l'elemento UL  e il bottone
-const emaiList= document.getElementById ('email-list');
-const loadMails= document.getElementById ('load-mails');
+const emaiList = document.getElementById ('email-list');
+const loadMails = document.getElementById ('load-mails');
 
 
 //funzione che fa il fetch 10 volte per ottenere le diverse mail
@@ -11,19 +11,20 @@ function fetchMails(){
 
     for (let i=0; i<10; i++){
         //chiamata HTTP all API con axios
-    axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(response =>{  //response contiene i dati della risposta
+      axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(response =>{  //response contiene i dati della risposta
         //axios ha goa convertito la risposta JSON, quindi accediamo direttamente a response.data
         const email= response.data.response;
 
         //creo un elemento <LI> per aggiungerlo alla lista 
-        const li= document.createElement('li');
+        const li = document.createElement('li');
 
         //aggiungo la classe di bootstrap per avere uno stile piu ordinato e carino
-        la.classList.add ('list-group-item');
-
-
- 
-   } )  
- }
+        la.classList.add('list-group-item');
+        //metto l' email  come testo dentro il <li>
+        li.textContent=email;
+        //metto  l' <li> alla lista <ul>
+        emaiList.appendChild(li);
+       } );  
+    }
 
 }
