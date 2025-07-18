@@ -15,6 +15,13 @@ function fetchMails(){
         //axios ha goa convertito la risposta JSON, quindi accediamo direttamente a response.data
         const email= response.data.response;
 
+        //creo un elemento <LI> per aggiungerlo alla lista 
+        const li= document.createElement('li');
+
+        //aggiungo la classe di bootstrap per avere uno stile piu ordinato e carino
+        la.classList.add ('list-group-item');
+
+
  
    } )  
  }
