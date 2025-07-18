@@ -7,9 +7,16 @@ const loadMails= document.getElementById ('load-mails');
 function fetchMails(){
     //svuoto la lista prima di aggiungere quelle nuove
     emaiList.innerHTML='';
-    
+
+
+    for (let i=0; i<10; i++){
+        //chiamata HTTP all API con axios
+    axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(response =>{  //response contiene i dati della risposta
+        //axios ha goa convertito la risposta JSON, quindi accediamo direttamente a response.data
+        const email= response.data.response;
+
+ 
+   } )  
+ }
+
 }
-
-//axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then(resp =>{
-
-//} )
